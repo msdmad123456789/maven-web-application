@@ -20,12 +20,14 @@ node
     {
         sh "${mavenHome}/bin/mvn deploy"
     }
+    /*
     stage('DeployApllicationintoTomcatServer')
     {
         sshagent(['1bacffbe-1f2a-4431-821d-57d31257735b']) {
         sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.12.6:/opt/apache-tomcat-9.0.53/webapps/"
     }
     }
+    */
     stage('SendEmailNotification')
     {
         emailext body: '''Build Over.....
